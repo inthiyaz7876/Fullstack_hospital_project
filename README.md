@@ -1,2 +1,3 @@
-# Fullstack_hospital_project
-React and Java Mongo end end hospital project
+# Managing-hospital
+
+[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/stackblitz-starters-dkbhui)

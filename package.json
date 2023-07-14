@@ -1,0 +1,40 @@
+{
+  "name": "stackblitz-starters-rgxl3x",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@popperjs/core": "^2.11.7",
+    "@types/react": "18.2.11",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.0",
+    "mdbreact": "^5.2.0",
+    "prop-types": "^15.6.0",
+    "react": "18.2.0",
+    "react-bootstrap": "2.7.4",
+    "react-dom": "18.2.0",
+    "react-router-dom": "^6.14.1",
+    "recharts": "^2.7.2"
+  },
+  "scripts": {
+    "start": "set PORT=3434 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy":"http://localhost:8081",
+  "devDependencies": {
+    "react-scripts": "latest"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
