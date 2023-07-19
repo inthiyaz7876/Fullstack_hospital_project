@@ -17,20 +17,24 @@ import TodayOP from './Tables/TodayOP';
 import MedicalData from './Tables/MedicalData';
 import AvailbelBeds from './Tables/AvailableBeds';
 import PatientData from './Tables/PatientData';
+import AddEmployee from './components/AddEmployee';
 
-export default function Dashboard({getUser}) {
+export default function Dashboard(props) {
 
-
-  const user = "admi";
-  const leftMenuAdminData = user == 'admin' ? ["Financial Report", "Patient Data", "Medical Data"] : 
-  ["OP Section", "Patient Data", "Medical Section", "Lab"];
+  
   const AvailablestaffData = ["Dr Vardhan", "Nirio", "Molwell", "Looper"];
 
   const [tabsText, setTabsText] = useState(adminData.default);
-  const [tabsDevider, setTabsDevider] = useState(user == 'admin' ? 'Financial Report': 'OP Section');
+  const [userName, setUserName]= useState(localStorage.getItem("lastname"));
   const [graphType, setGraphType] = useState('employee');
-  useEffect(() => {}, [tabsDevider]);
+  useEffect(() => {
 
+  }, []);
+
+  const [tabsDevider, setTabsDevider] = useState(userName == 'admin' ? 'Financial Report': 'OP Section');
+  const leftMenuAdminData = userName == 'admin' ? ["Financial Report", "Patient Data", "Medical Data", "Add Employee"] : 
+  ["OP Section", "Patient Data", "Medical Section", "Lab"];
+  console.log("userName", userName);
   const controllLeftMenu = (e, item) => {
     console.log('clicked', e.target.name);
     // testtabs.tabsInfo = tabsText[e.target.name];
@@ -100,7 +104,7 @@ export default function Dashboard({getUser}) {
           <div>{graphType == 'medicen' ?<MedicalReportGraph />: null}</div>
           <div>{graphType == 'employee' ?<EmployeeReport />: null}</div>
          </div>
-            </> : tabsDevider == 'Lab' ? <LabsTable /> : tabsDevider == 'OP Section' ? <TodayOP /> : tabsDevider == 'Medical Section' || tabsDevider == 'Medical Data' ? <MedicalData /> : tabsDevider == 'Patient Data' ? <PatientData/>:null}
+            </> : tabsDevider == 'Lab' ? <LabsTable /> : tabsDevider == 'OP Section' ? <TodayOP /> : tabsDevider == 'Medical Section' || tabsDevider == 'Medical Data' ? <MedicalData /> : tabsDevider == 'Patient Data' ? <PatientData/>: tabsDevider == 'Add Employee' ? <AddEmployee />: null}
   
             {/* <JustifiedExample data={tabsDevider} />
             <ResponsiveExample data={tableData} /> */}

@@ -11,6 +11,7 @@ export default function Login({getUser}) {
     const [pass, setPass] = useState(" ");
     const setName = (e) => {
         setUserName(e.target.value)
+        localStorage.setItem("lastname", e.target.value);
     }
     const setPassword = (e) => {
         setPass(e.target.value);

@@ -8,13 +8,14 @@ export default function App() {
 
    const getUser = (usr, pswd) => {
       console.log("ioio", usr, pswd);
+      setUser(usr);
    }
 
     return (
       <>
       <Routes>
          <Route path="/" element={<Login getUser={getUser}/>} />
-         <Route path="/dashboard" element={<Dashboard />}/>
+         <Route path="/dashboard" element={<Dashboard user={user} />}/>
       </Routes>
    </>
   );
